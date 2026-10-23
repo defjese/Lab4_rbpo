@@ -17,8 +17,6 @@ public interface TournamentRepository extends JpaRepository<Tournament, Long> {
 
     boolean existsByName(String name);
 
-    // Блокирует строку турнира до конца транзакции:
-    // два одновременных запроса не смогут обойти лимит команд
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("select t from Tournament t where t.id = :id")
     Optional<Tournament> findByIdForUpdate(@Param("id") Long id);

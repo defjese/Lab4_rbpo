@@ -11,8 +11,6 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    // Срабатывает, когда запрос нарушает ограничения БД
-    // (дубликат имени, отрицательный счёт и т.п.)
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<Map<String, String>> handleIntegrity(
             DataIntegrityViolationException ex

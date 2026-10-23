@@ -18,7 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-// Тестовые данные: заполняются один раз, если таблица users пустая
 @Component
 public class DataInitializer implements CommandLineRunner {
 
